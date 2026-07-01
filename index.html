@@ -8,9 +8,7 @@
     <title>Josam Auto</title>
 
     <link rel="icon" type="image/png" href="assets/favicon.png">
-
     <link rel="stylesheet" href="style.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&display=swap" rel="stylesheet">
 </head>
 
@@ -18,48 +16,46 @@
 
     <header class="navbar">
 
-    <div class="logo">
-        JOSAM AUTO
-    </div>
+        <div class="logo">
+            JOSAM AUTO
+        </div>
 
-    <div class="header-actions">
+        <div class="header-actions">
 
-        <div class="menu-wrapper">
+            <div class="menu-wrapper">
 
-            <div class="menu-toggle" id="menuToggle">
-                ☰
+                <div class="menu-toggle" id="menuToggle">
+                    ☰
+                </div>
+
+                <nav id="navMenu">
+                    <a href="#home">Home</a>
+                    <a href="#cars">Inventory</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
             </div>
 
-            <nav id="navMenu">
-                <a href="#home">Home</a>
-                <a href="#cars">Inventory</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div class="account-btn" id="accountBtn">
+
+                <div id="accountMenu" class="account-menu">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                    <a href="#">Saved</a>
+                </div>
+
+                <img src="assets/accounticon.jpg" alt="Account">
+
+            </div>
 
         </div>
 
-        <div class="account-btn" id="accountBtn">
-
-            <div id="accountMenu" class="account-menu">
-                <a href="#">Login</a>
-                <a href="#">Register</a>
-                <a href="#">Saved</a>
-            </div>
-
-            <img src="assets/accounticon.jpg" alt="Account">
-
-        </div>
-
-    </div>
-
-</header>
+    </header>
 
     <section class="hero" id="home">
 
         <div class="slideshow">
-
             <img src="assets/background.png" class="active" alt="Car Background 1">
-
         </div>
 
         <div class="overlay"></div>
@@ -94,54 +90,52 @@
 
         <div class="search-container">
 
-    <div class="search-bar">
+            <div class="search-bar">
 
-        <input
-            type="text"
-            id="globalSearch"
-            placeholder="Search model like Toyota, etc..."
-        >
-        
-        <button id="filterToggle" class="filter-btn">
-            <img src="assets/filtericon.jpg" alt="Filter">
-        </button>
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search model like Toyota, etc..."
+                >
 
-    </div>
+                <button id="filterToggle" class="filter-btn">
+                    <img src="assets/filtericon.jpg" alt="Filter">
+                </button>
 
-    <div id="filterPanel" class="filter-panel">
+            </div>
 
-        <select id="brandFilter">
-            <option value="">Brand</option>
-        </select>
+            <div id="filterPanel" class="filter-panel">
 
-        <select id="carTypeFilter">
-            <option value="">Car Type</option>
-        </select>
+                <select id="brandFilter">
+                    <option value="">Brand</option>
+                </select>
 
-        <select id="fuelFilter">
-            <option value="">Fuel</option>
-        </select>
+                <select id="carTypeFilter">
+                    <option value="">Car Type</option>
+                </select>
 
-        <select id="yearFilter">
-            <option value="">Year</option>
-        </select>
+                <select id="fuelFilter">
+                    <option value="">Fuel</option>
+                </select>
 
-        <select id="dealFilter">
-            <option value="">Deal</option>
-        </select>
+                <select id="yearFilter">
+                    <option value="">Year</option>
+                </select>
 
-        <div class="filter-actions">
-            <button id="carSearchBtn">Apply Filters</button>
-            <button id="carClearBtn">Clear</button>
+                <select id="dealFilter">
+                    <option value="">Deal</option>
+                </select>
+
+                <div class="filter-actions">
+                    <button id="carSearchBtn">Apply Filters</button>
+                    <button id="carClearBtn">Clear</button>
+                </div>
+
+            </div>
+
         </div>
 
-    </div>
-
-    </div>
-
         <div class="car-grid" id="carsGrid">
-
-
         </div>
 
         <button class="view-more-btn" id="moreCarsBtn">
@@ -162,59 +156,62 @@
 
     <section class="contact" id="contact">
 
-    <div class="contact-wrapper">
+        <div class="contact-wrapper">
 
-        <h2>Reach Us</h2>
+            <h2>Reach Us</h2>
 
-        <div class="contact-items">
+            <div class="contact-items">
 
-    <div class="social">
+                <div class="social">
 
-        <a href="tel:+254743635603">
-            <img src="assets/phoneicon.png" alt="Call">
-        </a>
+                    <a href="tel:+254743635603">
+                        <img src="assets/phoneicon.png" alt="Call">
+                    </a>
 
-        <a href="https://www.facebook.com/josamauto/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/facebook.png" alt="Facebook">
-        </a>
+                    <a href="https://www.facebook.com/josamauto/" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/facebook.png" alt="Facebook">
+                    </a>
 
-        <a href="https://www.instagram.com/josamauto/" target="_blank" rel="noopener noreferrer">
-            <img src="assets/instagramicon.png" alt="Instagram">
-        </a>
+                    <a href="https://www.instagram.com/josamauto/" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/instagramicon.png" alt="Instagram">
+                    </a>
 
-        <a href="https://wa.me/254743635603" target="_blank" rel="noopener noreferrer">
-            <img src="assets/whatsapp.png" alt="WhatsApp">
-        </a>
+                    <a href="https://wa.me/254743635603" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/whatsapp.png" alt="WhatsApp">
+                    </a>
 
-        <a href="#" id="shareBtn">
-            <img src="assets/shareicon.png" alt="Share">
-        </a>
+                    <a href="#" id="shareBtn">
+                        <img src="assets/shareicon.png" alt="Share">
+                    </a>
 
-    </div>
+                </div>
 
-    <div class="location-block">
+                <div class="location-block">
 
-        <a href="https://maps.google.com/?q=Nairobi"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="location-block">
+                    <a
+                        href="https://maps.google.com/?q=Nairobi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="location-block"
+                    >
 
-    <div class="location-icon">
-        <img src="assets/locationicon.png" alt="Location">
-    </div>
+                        <div class="location-icon">
+                            <img src="assets/locationicon.png" alt="Location">
+                        </div>
 
-    <h3>Visit Our Showroom!</h3>
-    <p>Nairobi, Kenya</p>
+                        <h3>Visit Our Showroom!</h3>
 
-</a>
+                        <p>Nairobi, Kenya</p>
 
-    </div>
+                    </a>
 
-</div>
+                </div>
 
-    </div>
+            </div>
 
-</section>
+        </div>
+
+    </section>
 
     <footer class="footer">
 
@@ -224,9 +221,9 @@
 
     </footer>
 
-<div id="maintenancePopup" class="maintenance-popup">
-    Under Maintenance
-</div>
+    <div id="maintenancePopup" class="maintenance-popup">
+        Under Maintenance
+    </div>
 
     <script type="module" src="script.js"></script>
 
