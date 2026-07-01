@@ -1036,18 +1036,18 @@ nav#navMenu{
 
     display:flex;
     flex-direction:column;
+    align-items:stretch;   /* add this */
+
     gap:10px;
 
     padding:15px;
-    background:
-    rgba(15, 15, 15, 0.707);
+
+    background:rgba(15,15,15,.707);
 
     backdrop-filter:blur(28px);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.15);
-
     -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
 
     border-radius:18px;
 
@@ -1068,16 +1068,22 @@ nav#navMenu.active{
 }
 
 nav#navMenu a{
+    display:block;
+    width:100%;
 
-    color: #f5f7fa;
-    
+    text-align:left;
+
+    color:#f5f7fa;
+
     padding:12px 15px;
 
     border-radius:12px;
 
-    background:none;
-
     transition:.25s;
+}
+
+nav#navMenu a:hover{
+    background:rgba(212,160,23,.15);
 }
 
 nav#navMenu a:hover{
