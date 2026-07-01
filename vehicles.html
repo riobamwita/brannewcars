@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Car Details</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <link rel="stylesheet" href="vehicles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <button id="backBtn" class="back-btn">
+        Back
+    </button>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1 id="vehicleTitle">
+                Loading...
+            </h1>
+
+            <div id="vehiclePrice" class="price"></div>
+
+            <div id="heroMeta" class="hero-meta"></div>
+
+            <div class="hero-description">
+
+                <h3>At a Glance</h3>
+
+                <p id="description"></p>
+
+            </div>
+
+            <div class="gallery-section">
+
+                <h2>Gallery</h2>
+
+                <div id="gallery" class="gallery"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<div class="save-car-box">
+
+    <button id="saveCarBtn" class="save-car-btn">
+
+        <img src="assets/saveicon.png" alt="Save">
+
+        <span>Save Car</span>
+
+    </button>
+
+</div>
+
+
+<section class="vehicle-details">
+
+        <aside class="sidebar">
+
+            <div class="info-card">
+
+                <h3>Specs</h3>
+
+                <ul id="features"></ul>
+
+            </div>
+
+            <div class="agent-card">
+
+                <h3>Interested in this car?</h3>
+
+                <div class="hero-contact">
+
+<a href="tel:+254743635603" class="btn secondary">
+    <img src="assets/phoneicon.png"
+         alt="Phone"
+         class="btn-icon">
+    Call Dealer
+</a>
+
+<a href="https://wa.me/254743635603" target="_blank" class="btn">
+    <img src="assets/whatsapp.png"
+         alt="WhatsApp"
+         class="btn-icon">
+    Text Dealer
+</a>
+
+            </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+    <div id="lightbox" class="lightbox">
+
+    <button class="close-lightbox">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <button class="lightbox-arrow lightbox-prev">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <button class="lightbox-arrow lightbox-next">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <div class="lightbox-counter"></div>
+
+    <div class="lightbox-gallery"></div>
+
+    </div>
+
+    <div id="savePopup" class="save-popup">
+
+    <p>
+        You need an account to save cars and view them later.
+    </p>
+
+</div>
+
+    <script type="module" src="vehicles.js"></script>
+
+</body>
+
+</html>

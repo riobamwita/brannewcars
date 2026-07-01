@@ -1,0 +1,707 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f3f4f6;
+    color:#111827;
+    line-height:1.5;
+    font-size:14px;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.back-btn{
+    position:fixed;
+    top:clamp(10px,2vw,18px);
+    right:clamp(10px,2vw,18px);
+    left:auto;
+    z-index:1000;
+    border:none;
+    background:#fff;
+    color:#111827;
+    padding:10px 18px;
+    font-size:13px;
+    font-weight:600;
+    border-radius:12px;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.25s;
+}
+
+.back-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+
+.hero{
+    width:min(1150px,88%);
+    margin:auto;
+    padding:30px 0 18px;
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+}
+
+#vehicleTitle{
+    font-size:2.2rem;
+    font-weight:700;
+    color:#111827;
+    line-height:1.1;
+    letter-spacing:-1px;
+}
+
+.price{
+    font-size:1.7rem;
+    font-weight:700;
+    color:#059669;
+}
+
+.hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.hero-meta span{
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:500;
+}
+
+.hero-description{
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:18px;
+}
+
+.hero-description h3{
+    font-size:16px;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.hero-description p{
+    color:#4b5563;
+    font-size:13px;
+}
+
+.gallery-section{
+    margin-top:5px;
+}
+
+.gallery-section h2{
+    font-size:18px;
+    margin-bottom:12px;
+    font-weight:700;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.gallery img,
+.gallery-stack{
+    width:100%;
+    height:220px;
+    border-radius:16px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.gallery img{
+    object-fit:cover;
+}
+
+.gallery-stack{
+    position:relative;
+}
+
+.gallery-stack img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.45);
+
+    color:#fff;
+
+    font-size:2rem;
+    font-weight:700;
+
+    backdrop-filter:blur(2px);
+}
+
+.vehicle-details{
+    width:min(1150px,88%);
+    margin:0 auto 30px;
+}
+
+.sidebar{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:16px;
+}
+
+.info-card,
+.agent-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    padding:18px;
+}
+
+.info-card h3,
+.agent-card h3{
+    font-size:16px;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+#features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+}
+
+#features li{
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:10px 12px;
+    font-size:12px;
+    font-weight:500;
+    color:#374151;
+}
+
+.hero-contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    height:46px;
+
+    border-radius:12px;
+
+    font-size:13px;
+    font-weight:600;
+
+    transition:.25s;
+
+    cursor:pointer;
+}
+
+
+/* Call button */
+.btn.secondary{
+
+    background:#059669;
+
+    color:white;
+
+}
+
+
+.btn.secondary:hover{
+
+    background:#047857;
+
+}
+
+
+/* Mail button */
+.hero-contact .btn:not(.secondary){
+
+    background:#111827;
+
+    color:white;
+
+}
+
+
+.hero-contact .btn:not(.secondary):hover{
+
+    background:#000;
+
+}
+
+
+.btn-icon{
+
+    width:18px;
+
+    height:18px;
+
+    object-fit:contain;
+
+}
+
+
+@media (max-width: 768px) {
+
+    .hero{
+        width: 94%;
+        padding: 24px 0 14px;
+    }
+
+    .vehicle-details{
+        width: 94%;
+        margin-bottom: 24px;
+    }
+
+    #vehicleTitle{
+        font-size: 1.7rem;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+    }
+
+    .price{
+        font-size: 1.35rem;
+    }
+
+    .hero-meta{
+        gap: 6px;
+    }
+
+    .hero-meta span{
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+    .hero-description{
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .hero-description h3{
+        font-size: 14px;
+    }
+
+    .hero-description p{
+        font-size: 12px;
+    }
+
+    .sidebar{
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 12px;
+    }
+
+    .info-card,
+    .agent-card{
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .info-card h3,
+    .agent-card h3{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    #features{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+#features li{
+    font-size: 11px;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+    .hero-contact{
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .btn{
+        height: 42px;
+        font-size: 11px;
+        border-radius: 10px;
+    }
+
+    .btn-icon{
+        width: 15px;
+        height: 15px;
+    }
+
+    .gallery img,
+    .gallery-stack{
+        height:140px;
+    }
+
+    .gallery-overlay{
+        font-size:1.5rem;
+    }
+
+}
+
+.lightbox{
+    position:fixed;
+    inset:0;
+
+    background:#000;
+
+    z-index:9999;
+
+    display:none;
+    flex-direction:column;
+}
+
+.lightbox.show{
+    display:flex;
+}
+
+.close-lightbox{
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:100;
+}
+
+.lightbox-counter{
+    position:absolute;
+
+    top:28px;
+    left:25px;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    z-index:100;
+}
+
+.lightbox-gallery{
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:none;
+}
+
+.lightbox-gallery::-webkit-scrollbar{
+    display:none;
+}
+
+.lightbox-gallery img{
+    flex:0 0 100%;
+
+    width:100vw;
+    height:100vh;
+
+    object-fit:contain;
+
+    scroll-snap-align:center;
+
+    background:black;
+}
+
+/* LIGHTBOX ARROWS */
+
+.lightbox-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.18);
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:200;
+
+}
+
+
+.lightbox-prev{
+
+    left:25px;
+
+}
+
+
+.lightbox-next{
+
+    right:25px;
+
+}
+
+
+
+/* IMAGE ZOOM */
+
+.lightbox-gallery img{
+
+    transition:.3s ease;
+
+    cursor:zoom-in;
+
+}
+
+
+.lightbox-gallery img.zoomed{
+
+    object-fit:contain;
+
+    transform:scale(1.8);
+
+    cursor:zoom-out;
+
+}
+
+
+
+/* HIDE ARROWS ON TOUCH DEVICES */
+
+@media (hover:none){
+
+    .lightbox-arrow{
+
+        display:none;
+
+    }
+
+}
+
+
+
+/* MOBILE TITLE SPACE */
+
+@media(max-width:768px){
+
+
+    .hero{
+
+        padding-top:60px;
+
+    }
+
+
+    #vehicleTitle{
+
+        padding-right:20px;
+
+        word-break:break-word;
+
+    }
+
+
+}
+
+.save-car-box{
+
+    width:min(1150px,88%);
+
+    margin:5px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+.save-car-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+
+    border:none;
+
+    background:transparent;
+
+
+    padding:0;
+
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:15px;
+
+    font-weight:600;
+
+
+    color:#111827;
+
+
+    cursor:pointer;
+
+
+    transition:.25s ease;
+
+}
+
+
+.save-car-btn img{
+
+    width:22px;
+
+    height:22px;
+
+    object-fit:contain;
+
+}
+
+
+.save-car-btn:hover{
+
+    color:#c22222;
+
+    transform:translateY(-2px);
+
+}
+
+.save-popup{
+
+    position:fixed;
+
+
+    top:50%;
+
+    left:50%;
+
+
+    transform:
+    translate(-50%,-50%)
+    scale(.9);
+
+
+    background:#464749b7;
+
+
+    color:white;
+
+
+    padding:22px 30px;
+
+
+    border-radius:16px;
+
+
+    text-align:center;
+
+
+    z-index:99999;
+
+
+    opacity:0;
+
+    visibility:hidden;
+
+
+    transition:.3s ease;
+
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+}
+
+
+.save-popup.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+
+    transform:
+    translate(-50%,-50%)
+    scale(1);
+
+}
+
+.save-popup p{
+
+    color:#d1d5db;
+
+    font-size:14px;
+
+}
