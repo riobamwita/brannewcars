@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verifying...</title>
+</head>
+<body>
+    <h2>Verifying your account...</h2>
+
+    <script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+const supabase = createClient(
+  "https://llyhjdceiowghdrduhrl.supabase.co",
+  "YOUR_ANON_KEY"
+);
+
+async function handleAuthRedirect() {
+    const { error } = await supabase.auth.exchangeCodeForSession(
+        window.location.href
+    );
+
+    if (error) {
+        console.error(error.message);
+    }
+
+    window.location.href = "/";
+}
+
+handleAuthRedirect();
+</script>
+
+</body>
+</html>

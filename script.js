@@ -516,10 +516,17 @@ function setupMoreCars() {
 
 function restoreFilters() {
 
-    const saved =
-        sessionStorage.getItem("vehicleFilters");
+    const savedBtn = document.querySelector('a[href="saved.html"]');
 
-    if (!saved) return;
+savedBtn?.addEventListener("click", async (e) => {
+    const user = await getCurrentUser();
+
+    if (!user) {
+        e.preventDefault();
+        openAuth("login");
+        alert("Please login to view saved cars");
+    }
+});
 
     const filters = JSON.parse(saved);
 
@@ -756,7 +763,6 @@ function updateAuthUI(user) {
 
     const loginBtn = document.getElementById("loginBtn");
     const registerBtn = document.getElementById("registerBtn");
-    const accountBtn = document.getElementById("accountBtn");
 
     if (!loginBtn || !registerBtn) return;
 
