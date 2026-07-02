@@ -997,6 +997,7 @@ nav a:last-child{
     top:60px;
     right:12px;
     padding:15px;
+    border-radius:0;
 }
 
 .account-menu a{
