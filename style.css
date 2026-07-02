@@ -1078,7 +1078,7 @@ nav a:last-child{
 
 .filter-panel select{
 
-    height:46px;
+    height:30px;
 
     font-size:15px;
 }
@@ -1089,11 +1089,11 @@ nav a:last-child{
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:10px;
+    gap:5px;
 
-    padding:16px;
+    padding:10px;
 
-    border-radius:18px;
+    border-radius:0;
 }
 
 .filter-panel.active{
@@ -1271,6 +1271,19 @@ nav a:last-child{
 
     font-size:.62rem;
 }
+
+.maintenance-popup {
+        left: 50%;
+        right: auto;
+
+        transform: translate(-50%, -15px);
+        width: calc(100% - 24px);
+        max-width: 420px;
+    }
+
+    .maintenance-popup.show {
+        transform: translate(-50%, 0);
+    }
 
 .cars::before,
 .cars::after,
