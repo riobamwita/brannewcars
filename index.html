@@ -39,9 +39,9 @@
             <div class="account-btn" id="accountBtn">
 
                 <div id="accountMenu" class="account-menu">
-                    <a href="#">Login</a>
-                    <a href="#">Register</a>
-                    <a href="#">Saved</a>
+                    <a href="#" id="loginBtn">Login</a>
+                    <a href="#" id="registerBtn">Register</a>
+                    <a href="saved.html">Saved</a>
                 </div>
 
                 <img src="assets/accounticon.jpg" alt="Account">
@@ -223,6 +223,27 @@
 
     <div id="maintenancePopup" class="maintenance-popup">
         Under Maintenance
+    </div>
+
+    <div id="authModal" class="auth-modal hidden">
+
+    <div class="auth-box">
+
+        <h2 id="authTitle">Login</h2>
+
+        <input type="email" id="authEmail" placeholder="Email">
+        <input type="password" id="authPassword" placeholder="Password">
+
+        <button id="authSubmit">Continue</button>
+
+        <p id="authSwitch">
+            Don't have an account? <span id="switchMode">Register</span>
+        </p>
+
+        <button id="closeAuth">Close</button>
+
+    </div>
+
     </div>
 
     <script type="module" src="script.js"></script>

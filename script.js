@@ -3,6 +3,96 @@ import { supabase } from "./supabase.js";
 let vehicles = [];
 let updateMoreCars = null;
 let filterActive = false;
+let authMode = "login";
+
+const authModal = document.getElementById("authModal");
+const loginBtn = document.getElementById("loginBtn");
+const registerBtn = document.getElementById("registerBtn");
+
+const authTitle = document.getElementById("authTitle");
+const authEmail = document.getElementById("authEmail");
+const authPassword = document.getElementById("authPassword");
+const authSubmit = document.getElementById("authSubmit");
+const switchMode = document.getElementById("switchMode");
+const closeAuth = document.getElementById("closeAuth");
+
+function openAuth(mode) {
+    authMode = mode;
+
+    authModal.classList.remove("hidden");
+
+    authTitle.textContent = mode === "login" ? "Login" : "Register";
+    authSubmit.textContent = mode === "login" ? "Login" : "Create Account";
+}
+
+loginBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    openAuth("login");
+});
+
+registerBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    openAuth("register");
+});
+
+switchMode?.addEventListener("click", () => {
+    openAuth(authMode === "login" ? "register" : "login");
+});
+
+closeAuth?.addEventListener("click", () => {
+    authModal.classList.add("hidden");
+});
+
+authSubmit?.addEventListener("click", async () => {
+
+    const email = authEmail.value.trim();
+    const password = authPassword.value.trim();
+
+    if (!email || !password) {
+        alert("Fill all fields");
+        return;
+    }
+
+    let result;
+
+    if (authMode === "login") {
+
+        result = await supabase.auth.signInWithPassword({
+            email,
+            password
+        });
+
+    } else {
+
+        result = await supabase.auth.signUp({
+            email,
+            password
+        });
+
+    }
+
+    const { error } = result;
+
+    if (error) {
+        alert(error.message);
+        return;
+    }
+
+    alert(authMode === "login" ? "Login successful" : "Account created");
+
+    authModal.classList.add("hidden");
+
+    const user = await getCurrentUser();
+    updateAuthUI(user);
+});
+
+async function getCurrentUser() {
+    const { data, error } = await supabase.auth.getUser();
+    if (error) return null;
+    return data.user;
+}
+const user = await getCurrentUser();
+console.log("Logged user:", user);
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -618,29 +708,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    accountMenu.addEventListener("click", (e) => {
-
-        const link = e.target.closest("a");
-
-        if (link) {
-
-            e.preventDefault();
-
-            accountMenu.classList.remove("active");
-
-            popup.classList.add("show");
-
-            setTimeout(() => {
-
-                popup.classList.remove("show");
-
-            }, 2000);
-        }
-
-        e.stopPropagation();
-
-    });
-
     document.addEventListener("click", () => {
 
         accountMenu.classList.remove("active");
@@ -683,4 +750,45 @@ document.getElementById("shareBtn").addEventListener("click", async function (e)
         navigator.clipboard.writeText(window.location.href);
         alert("Link copied to clipboard!");
     }
+});
+
+function updateAuthUI(user) {
+
+    const loginBtn = document.getElementById("loginBtn");
+    const registerBtn = document.getElementById("registerBtn");
+    const accountBtn = document.getElementById("accountBtn");
+
+    if (!loginBtn || !registerBtn) return;
+
+    if (user) {
+
+        loginBtn.textContent = "Logout";
+        registerBtn.style.display = "none";
+
+        loginBtn.onclick = async (e) => {
+            e.preventDefault();
+            await supabase.auth.signOut();
+            location.reload();
+        };
+
+    } else {
+
+        loginBtn.textContent = "Login";
+        registerBtn.style.display = "block";
+
+        loginBtn.onclick = (e) => {
+            e.preventDefault();
+            openAuth("login");
+        };
+
+        registerBtn.onclick = (e) => {
+            e.preventDefault();
+            openAuth("register");
+        };
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const user = await getCurrentUser();
+    updateAuthUI(user);
 });
