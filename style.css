@@ -1177,8 +1177,22 @@ nav a:last-child{
     font-size:.60rem;
 }
 
-.vehicle-price{
-    font-size:.75rem;
+.vehicle-bottom {
+    gap: 6px;
+    justify-content: space-between;
+}
+
+.vehicle-price {
+    font-size: .75rem;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    white-space: nowrap;
+}
+
+.currency {
+    font-size: .65rem;
+    margin-right: 0;
 }
 
 .vehicle-card{
