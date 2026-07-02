@@ -91,12 +91,12 @@ vehicle.hero_image
         </small>
 
         <span class="vehicle-price">
-            ${
+    ${
 vehicle.price != null
-? `KES ${Number(vehicle.price).toLocaleString()}`
-: "—"
-}
-        </span>
+        ? `<span class="currency">KES</span> ${Number(vehicle.price).toLocaleString()}`
+        : "—"
+    }
+</span>
         </div>
 
         </div>
