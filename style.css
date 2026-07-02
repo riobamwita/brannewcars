@@ -1067,7 +1067,7 @@ nav a:last-child{
 
 .filter-panel{
 
-    display:grid;
+    display:none;
 
     grid-template-columns:repeat(2,1fr);
 
@@ -1076,6 +1076,10 @@ nav a:last-child{
     padding:16px;
 
     border-radius:18px;
+}
+
+.filter-panel.active{
+    display:grid;
 }
 
 .filter-panel select{
@@ -1098,7 +1102,8 @@ nav a:last-child{
 
     flex:1;
 
-    height:46px;
+    height:36px;
+    border-radius:44px;
 
     font-size:15px;
 }
